@@ -1,0 +1,350 @@
+/*
+
+import React, { useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, Pressable, ScrollView } from "react-native";
+import { useForm, Controller } from "react-hook-form";
+import { styles } from "./Styles";
+import BemVindoAo from "../../components/bemVindoAo";
+import Oros from "../../components/oros";
+import EyeCrossed from "../../components/eyecrossed";
+import Gmail from "../../components/gmail";
+import Cadeado from "../../components/cadeado";
+import Nomecomplet from "../../components/nomeCompleto";
+import Naturalidade from "../../components/Naturalidade";
+import Cpf from "../../components/Cpf";
+import EstadoCivil from "../../components/EstadoCivil";
+import Nascimento from "../../components/Nascimento";
+import Cep from "../../components/cep";
+import { UsuarioService } from "../../../services/api/UsuarioService";
+
+type Formdata ={
+  nome: string
+  naturalidade: string
+  estadocivil: string
+  datadenascimento: string
+  email: string
+  cpf: string
+  cep: string
+  telefone: string
+  senha: string
+  confirmsenha: string
+}
+
+export default function Cadastro({navigation}: any) {
+  const { control, handleSubmit, formState: { errors }, watch } = useForm();
+
+  const password = watch('senha')
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const usuarioService = new UsuarioService();
+
+  
+  const handleSignIn = async (data: any) => {
+    console.log(data);
+    
+    
+    try {
+      const response = await usuarioService.cadastrar(data);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+      setErrorMessage(error as string)
+    }
+
+  };
+
+  const senha = watch("senha", "");
+  const confirmarSenha = watch("confirmarSenha", "");
+
+  const handleFlamengo = () => {
+    console.log("Flamengo");
+  };
+
+
+  return (
+    <View style={{ flex: 1, }}>
+      <ScrollView>
+        <View style={{ backgroundColor: '#142944', width: '100%', height: 360, alignItems: 'center', paddingTop: 98 }}>
+          <BemVindoAo />
+          <Oros />
+
+        </View>
+
+        <View style={styles.view}>
+          <Text style={styles.login}>Cadastro</Text>
+          <Text style={styles.EmailSenha}>Nome Completo</Text>
+          <View style={styles.GmailComImagem}>
+            <Nomecomplet />
+
+            <Controller
+
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="Seu nome completo"
+                  placeholderTextColor="#808080"
+                />
+              )}
+              name="nome"
+              rules={{ required: "Nome completo é obrigatório" }}
+            />
+          </View>
+          {errors.nome && <Text style={styles.errorText}>Nome completo é obrigatório</Text>}
+
+          <Text style={styles.EmailSenha}>Naturalidade</Text>
+          <View style={styles.GmailComImagem}>
+            <Naturalidade />
+
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="Manaus - Am"
+                  placeholderTextColor="#808080"
+                />
+              )}
+              name="naturalidade"
+              rules={{ required: "Naturalidade é obrigatória" }}
+            />
+          </View>
+
+          {errors.naturalidade && <Text style={styles.errorText}>Naturalidade é obrigatória</Text>}
+
+
+          <Text style={styles.EmailSenha}>Estado Civil</Text>
+          <View style={styles.GmailComImagem}>
+            <EstadoCivil></EstadoCivil>
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="Solteiro"
+                  placeholderTextColor="#808080"
+                />
+              )}
+              name="estadocivil"
+              rules={{ required: "Estado civil é obrigatório" }}
+            />
+          </View>
+
+
+
+          {errors.estadocivil && <Text style={styles.errorText}>Estado civil é obrigatório</Text>}
+          <Text style={styles.EmailSenha}>Data de Nascimento</Text>
+
+          <View style={styles.GmailComImagem}>
+            <Nascimento/>
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="Sua data de nascimento"
+                  placeholderTextColor="#808080"
+                  keyboardType="numeric"
+                />
+              )}
+              name="datadenascimento"
+              rules={{ required: "Data de nascimento é obrigatória" }}
+            />
+          </View>
+          {errors.datadenascimento && <Text style={styles.errorText}>Data de nascimento é obrigatória</Text>}
+
+          <Text style={styles.EmailSenha}>E-Mail</Text>
+          <View style={styles.GmailComImagem}>
+            <Gmail />
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="example@gmail.com"
+                  placeholderTextColor="#808080"
+                  textAlign="left"
+                  keyboardType="email-address"
+                />
+              )}
+              name="email"
+              rules={{
+                required: 'Email é obrigatório',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Digite um email válido"
+                }
+              }}
+            />
+          </View>
+          {errors.email && <Text style={styles.errorText}>Digite um email válido</Text>}
+          <Text style={styles.EmailSenha}>CPF</Text>
+          <View style={styles.GmailComImagem}>
+            <Cpf />
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="123.456.789-00"
+                  placeholderTextColor="#808080"
+                  keyboardType="numeric"
+                />
+              )}
+              name="cpf"
+              rules={{
+                required: 'CPF é obrigatório',
+                pattern: {
+                  value: /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,
+                  message: "Digite um CPF válido"
+                }
+              }}
+            />
+          </View>
+
+          {errors.cpf && <Text style={styles.errorText}>Digite um CPF válido</Text>}
+
+
+          <Text style={styles.EmailSenha}>CEP</Text>
+          <View style={styles.GmailComImagem}>
+            <Cep />
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="12345-678"
+                  placeholderTextColor="#808080"
+                  keyboardType="numeric"
+                />
+              )}
+              name="cep"
+              rules={{
+                required: 'CEP é obrigatório',
+                pattern: {
+                  value: /^\d{5}-\d{3}$/,
+                  message: "Digite um CEP válido"
+                }
+              }}
+            />
+          </View>
+
+          {errors.cep && <Text style={styles.errorText}>Digite um CEP válido</Text>}
+
+          <Text style={styles.EmailSenha}>Telefone</Text>
+          <View style={styles.GmailComImagem}>
+            <Cep />
+            <Controller
+              control={control}
+              render={({ field }) => (
+                <TextInput
+                  style={styles.Input}
+                  onChangeText={(value) => field.onChange(value)}
+                  value={field.value}
+                  placeholder="92 12345-6789"
+                  placeholderTextColor="#808080"
+                  keyboardType="numeric"
+                />
+              )}
+              name="telefone"
+              rules={{
+                required: 'Telefone é obrigatório',
+                pattern: {
+                  value: /^\d{5}-\d{4}$/,
+                  message: "Digite um Telefone válido"
+                }
+              }}
+            />
+          </View>
+
+          {errors.telefone && <Text style={styles.errorText}>Digite um Telefone válido</Text>}
+
+          <Text style={styles.EmailSenha}>Senha</Text>
+          <View style={styles.SenhaComImagem}>
+            <View style={styles.InputComCadeado}>
+              <Cadeado />
+              <Controller
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    style={styles.Input}
+                    onChangeText={(value) => field.onChange(value)}
+                    value={field.value}
+                    placeholder="*****************"
+                    placeholderTextColor="#808080"
+                    secureTextEntry
+                  />
+                )}
+                name="senha"
+                rules={{
+                  required: 'Senha é obrigatória',
+                  minLength: { value: 8, message: 'Senha deve ter no mínimo 8 caracteres' },
+                }}
+              />
+            </View>
+            <EyeCrossed />
+          </View>
+          {errors.senha && <Text style={styles.errorText}>Senha deve ter no mínimo 8 caracteres</Text>}
+          <Text style={styles.EmailSenha}>Confirme sua senha</Text>
+          <View style={styles.SenhaComImagem}>
+            <View style={styles.InputComCadeado}>
+              <Cadeado />
+              <Controller
+                control={control}
+                render={({ field }) => (
+                  <TextInput
+                    style={styles.Input}
+                    onChangeText={(value) => field.onChange(value)}
+                    value={field.value}
+                    placeholder="*****************"
+                    placeholderTextColor="#808080"
+                    secureTextEntry
+                  />
+                )}
+                name="confirmsenha"
+                rules={{
+                  required: 'Senha é obrigatória',
+                  minLength: { value: 8, message: 'Senha deve ter no mínimo 8 caracteres' },
+                  validate: value => value === password || 'As senhas não coincidem'
+                }}
+              />
+            </View>
+            <EyeCrossed />
+          </View>
+          {errors.confirmsenha && <Text style={styles.errorText}>Senha deve ter no mínimo 8 caracteres</Text>}
+
+
+          <TouchableOpacity onPress={handleSubmit(handleSignIn)} style={styles.Button}>
+            <Text style={styles.buttonLogin}>CADASTRAR</Text>
+          </TouchableOpacity>
+
+          {errorMessage && <Text style={styles.errorText}>{errorMessage}</Text>}
+
+        </View>
+
+        <View style={styles.NaoPossuiUmaContaAindaCadastrese}>
+          <Text style={styles.NaoPossuiUmaContaAinda}>Já possui uma conta? </Text>
+          <Pressable onPress={ () => navigation.navigate('Login')}>
+            <Text style={styles.Cadastrase}> Faça o Login</Text>
+          </Pressable>
+        </View>
+        <View />
+
+      </ScrollView>
+    </View>
+  );
+}           */
