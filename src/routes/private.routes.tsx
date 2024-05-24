@@ -5,6 +5,7 @@ import BOs from "../screens/BOs/BOs"
 import BOs2 from '../screens/BOs2/BOs2'
 import Perfil from '../screens/perfil/perfil'
 import Historico from '../screens/HistoricoBO/BOs'
+import BoDetalhes from '../screens/BoDetalhes/BoDetalhes'
 
 const AppRoutes = createStackNavigator()
 
@@ -41,6 +42,11 @@ export default function () {
             <AppRoutes.Screen
                 name="Historico"
                 component={Historico}
+            />
+
+            <AppRoutes.Screen
+                name="BoDetalhes"
+                component={BoDetalhes}
             />
         </AppRoutes.Navigator>
     )

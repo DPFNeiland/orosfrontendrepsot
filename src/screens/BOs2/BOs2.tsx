@@ -48,6 +48,7 @@ export default function BOs2({ navigation }: any) {
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
 
+
     const onChange = (event: any, selectedDate: any) => {
         const currentDate = selectedDate || date;
         setShow(false);
@@ -81,8 +82,8 @@ export default function BOs2({ navigation }: any) {
 
     const { user } = useAuth()
 
-    const handleCreateBO = async (data: any) => {
 
+    const handleCreateBO = async (data: any) => {
 
         const numeroeminteiro = watch('numeroerrado');
         const horadoocorrido = watch('hora_ocorrido');
@@ -93,11 +94,13 @@ export default function BOs2({ navigation }: any) {
 
         const data_ocorrido = `${dataFormatada}T${horaFormatada}.000-04:00`;
 
+
         const dataWithUser = {
             ...data,
             userId: user?.id,
             numero: parseInt(numeroeminteiro),
             data_ocorrido,
+            natureza
         };
 
         console.log(dataWithUser);
@@ -127,6 +130,10 @@ export default function BOs2({ navigation }: any) {
         await handleSubmit(handleCreateBO)();
 
     };
+
+    const [naturezadocrime, setNaturezaDoCrime] = useState(false)
+    const [natureza, setNatureza] = useState("")
+
     return (
 
         <SafeAreaView style={styles.areaview}>
@@ -136,332 +143,432 @@ export default function BOs2({ navigation }: any) {
 
                 <Text style={styles.TextRegisto}>Registro de B.O</Text>
 
-                <Text style={styles.TextRandom}>
-                    Natureza do Crime
-                </Text>
+                {natureza == "" &&
+                    <>
+                        <Text style={styles.TextRandom}>
+                            Natureza do Crime
+                        </Text>
 
-                <Text style={styles.EmailSenha}>Tipo de crime</Text>
-                <View style={styles.GmailComImagem}>
-                    <NaturezaCrime />
+                        <Text style={styles.EmailSenha}>Tipo de crime</Text>
+                        <View style={styles.GmailComImagem}>
+                            <NaturezaCrime />
 
-                    <Controller
-
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
+                            <TouchableOpacity
                                 style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="Ex: Furto / Roubo"
-                                placeholderTextColor="#808080"
+                                
+                                onPress={() => {
+                                    setNaturezaDoCrime(true)
+                                }}
                             />
-                        )}
-                        name="natureza"
-                        rules={{ required: "Natureza do crime é obrigatório" }}
-                    />
-                </View>
-                {errors.natureza && <Text style={styles.errorText}>{errors.natureza.message as string}</Text>}
+
+                            <Modal
+                                animationType="slide"
+                                transparent={true}
+                                visible={naturezadocrime}
+
+                            >
+                                <View style={styles.modal}>
+                                    <Text style={styles.TextconfirmBO}>Qual a natureza do crime?</Text>
+
+                                    <View style={styles.viewbotoes}>
+                                        <TouchableOpacity
+                                            onPress={() => {
+                                                setNaturezaDoCrime(false)
+                                                setNatureza("Furto")
+                                                console.log('Furto')
+                                            }}
+                                            style={styles.naobutton}
+                                        >
+                                            <Text style={styles.textbutton}>Furto</Text>
+                                        </TouchableOpacity>
 
 
 
-                <Text style={styles.TextRandom}>
-                    Quando Ocorreu?
-                </Text>
+                                        <TouchableOpacity
+                                            onPress={() => {
+                                                setNaturezaDoCrime(false)
+                                                setNatureza("Roubo")
+                                                console.log('Roubo')
+                                            }}
+                                            style={styles.simbutton}
+                                        >
+                                            <Text style={styles.textbutton}>Roubo</Text>
+                                        </TouchableOpacity>
 
-                <Text style={styles.EmailSenha}>Horário</Text>
-                <View style={styles.GmailComImagem}>
-                    <Text>   </Text>
-                    <Horario />
+                                    </View>
+                                </View>
+                            </Modal>
 
-                    <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
+                        </View>
+                    </>
+                }
+
+
+                {natureza != "" &&
+                    <>
+
+
+                        <Text style={styles.TextRandom}>
+                            Natureza do Crime
+                        </Text>
+
+                        <Text style={styles.EmailSenha}>Tipo de crime</Text>
+                        <View style={styles.GmailComImagem}>
+                            <NaturezaCrime />
+
+                            <Text
                                 style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="19:57"
-                                placeholderTextColor="#808080"
+                                onPress={() => {
+                                    setNaturezaDoCrime(true)
+                                }}
+                            >
+                                {natureza}
+
+
+
+                            </Text>
+                        </View>
+
+
+                        <Modal
+                                animationType="slide"
+                                transparent={true}
+                                visible={naturezadocrime}
+
+                            >
+                                <View style={styles.modal}>
+                                    <Text style={styles.TextconfirmBO}>Qual a natureza do crime?</Text>
+
+                                    <View style={styles.viewbotoes}>
+                                        <TouchableOpacity
+                                            onPress={() => {
+                                                setNaturezaDoCrime(false)
+                                                setNatureza("Furto")
+                                                console.log('Furto')
+                                            }}
+                                            style={styles.naobutton}
+                                        >
+                                            <Text style={styles.textbutton}>Furto</Text>
+                                        </TouchableOpacity>
+
+
+
+                                        <TouchableOpacity
+                                            onPress={() => {
+                                                setNaturezaDoCrime(false)
+                                                setNatureza("Roubo")
+                                                console.log('Roubo')
+                                            }}
+                                            style={styles.simbutton}
+                                        >
+                                            <Text style={styles.textbutton}>Roubo</Text>
+                                        </TouchableOpacity>
+
+                                    </View>
+                                </View>
+                            </Modal>
+
+                        <Text style={styles.TextRandom}>
+                            Quando Ocorreu?
+                        </Text>
+
+                        <Text style={styles.EmailSenha}>Horário</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Text>   </Text>
+                            <Horario />
+
+                            <Controller
+
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="19:57"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="hora_ocorrido"
+                                rules={{ required: "Horário do crime é obrigatório" }}
                             />
-                        )}
-                        name="hora_ocorrido"
-                        rules={{ required: "Horário do crime é obrigatório" }}
-                    />
-                </View>
-                {errors.hora_ocorrido && <Text style={styles.errorText}>{errors.hora_ocorrido.message as string}</Text>}
+                        </View>
+                        {errors.hora_ocorrido && <Text style={styles.errorText}>{errors.hora_ocorrido.message as string}</Text>}
 
-                <Text style={styles.EmailSenha}>Data</Text>
-                <View style={styles.GmailComImagem}>
-                    <Text>   </Text>
-                    <Calendar />
-                    <TouchableOpacity onPress={showDatepicker} style={styles.buttonDate}>
-                        <Text style={styles.Input}>{date.toLocaleDateString()}</Text>
-                    </TouchableOpacity>
+                        <Text style={styles.EmailSenha}>Data</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Text>   </Text>
+                            <Calendar />
+                            <TouchableOpacity onPress={showDatepicker} style={styles.buttonDate}>
+                                <Text style={styles.Input}>{date.toLocaleDateString()}</Text>
+                            </TouchableOpacity>
 
-                    {show && (
-                        <DateTimePicker
-                            testID="dateTimePicker"
-                            value={date}
-                            mode={mode as unknown as undefined}
-                            is24Hour={true}
-                            display="default"
-                            onChange={onChange}
-                        />
-                    )}
-                </View>
+                            {show && (
+                                <DateTimePicker
+                                    testID="dateTimePicker"
+                                    value={date}
+                                    mode={mode as unknown as undefined}
+                                    is24Hour={true}
+                                    display="default"
+                                    onChange={onChange}
+                                />
+                            )}
+                        </View>
 
 
 
-                <Text style={styles.TextRandom}>
-                    Onde Ocorreu?
-                </Text>
+                        <Text style={styles.TextRandom}>
+                            Onde Ocorreu?
+                        </Text>
 
-                <Text style={styles.EmailSenha}>CEP</Text>
-                <View style={styles.GmailComImagem}>
-                    <Cep />
+                        <Text style={styles.EmailSenha}>CEP</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Cep />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="00000-000"
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="00000-000"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="cep_ocorrido"
+                                rules={{ required: "Cep é obrigatório" }}
                             />
-                        )}
-                        name="cep_ocorrido"
-                        rules={{ required: "Cep é obrigatório" }}
-                    />
-                </View>
-                {errors.cep_ocorrido && <Text style={styles.errorText}>{errors.cep_ocorrido.message as string}</Text>}
+                        </View>
+                        {errors.cep_ocorrido && <Text style={styles.errorText}>{errors.cep_ocorrido.message as string}</Text>}
 
 
 
-                <Text style={styles.EmailSenha}>UF (Estado)</Text>
-                <View style={styles.GmailComImagem}>
-                    <UFEstado />
+                        <Text style={styles.EmailSenha}>UF (Estado)</Text>
+                        <View style={styles.GmailComImagem}>
+                            <UFEstado />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="Amazonas"
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="Amazonas"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="ufBO"
+                                rules={{ required: "Estado é obrigatório" }}
                             />
-                        )}
-                        name="ufBO"
-                        rules={{ required: "Estado é obrigatório" }}
-                    />
-                </View>
-                {errors.ufBO && <Text style={styles.errorText}>{errors.ufBO.message as string}</Text>}
+                        </View>
+                        {errors.ufBO && <Text style={styles.errorText}>{errors.ufBO.message as string}</Text>}
 
 
 
-                <Text style={styles.EmailSenha}>Município</Text>
-                <View style={styles.GmailComImagem}>
-                    <Naturalidade />
+                        <Text style={styles.EmailSenha}>Município</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Naturalidade />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="Manaus"
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="Manaus"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="municipioBO"
+                                rules={{ required: "Município do BO é obrigatório" }}
                             />
-                        )}
-                        name="municipioBO"
-                        rules={{ required: "Município do BO é obrigatório" }}
-                    />
-                </View>
-                {errors.municipioBO && <Text style={styles.errorText}>{errors.municipioBO.message as string}</Text>}
+                        </View>
+                        {errors.municipioBO && <Text style={styles.errorText}>{errors.municipioBO.message as string}</Text>}
 
 
-                <Text style={styles.EmailSenha}>Logradouro</Text>
-                <View style={styles.GmailComImagem}>
-                    <Logradouro />
+                        <Text style={styles.EmailSenha}>Logradouro</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Logradouro />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="Rua itaitê"
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="Rua itaitê"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="logradouro"
+                                rules={{ required: "Logradouro é obrigatório" }}
                             />
-                        )}
-                        name="logradouro"
-                        rules={{ required: "Logradouro é obrigatório" }}
-                    />
-                </View>
-                {errors.logradouro && <Text style={styles.errorText}>{errors.logradouro.message as string}</Text>}
+                        </View>
+                        {errors.logradouro && <Text style={styles.errorText}>{errors.logradouro.message as string}</Text>}
 
 
-                <Text style={styles.EmailSenha}>Número</Text>
-                <View style={styles.GmailComImagem}>
-                    <Numero />
+                        <Text style={styles.EmailSenha}>Número</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Numero />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="916"
-                                placeholderTextColor="#808080"
-                                keyboardType="numeric"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="916"
+                                        placeholderTextColor="#808080"
+                                        keyboardType="numeric"
+                                    />
+                                )}
+                                name="numeroerrado"
+                                rules={{ required: "Número é obrigatório" }}
                             />
-                        )}
-                        name="numeroerrado"
-                        rules={{ required: "Número é obrigatório" }}
-                    />
-                </View>
-                {errors.numeroerrado && <Text style={styles.errorText}>{errors.numeroerrado.message as string}</Text>}
+                        </View>
+                        {errors.numeroerrado && <Text style={styles.errorText}>{errors.numeroerrado.message as string}</Text>}
 
-                <Text style={styles.EmailSenha}>Complemento</Text>
-                <View style={styles.GmailComImagem}>
-                    <Complemento />
+                        <Text style={styles.EmailSenha}>Complemento</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Complemento />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder=""
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder=""
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="complemento"
+                                rules={{ required: "Complemento é obrigatório" }}
                             />
-                        )}
-                        name="complemento"
-                        rules={{ required: "Complemento é obrigatório" }}
-                    />
-                </View>
-                {errors.complemento && <Text style={styles.errorText}>{errors.complemento.message as string}</Text>}
+                        </View>
+                        {errors.complemento && <Text style={styles.errorText}>{errors.complemento.message as string}</Text>}
 
 
-                <Text style={styles.EmailSenha}>Bairro</Text>
-                <View style={styles.GmailComImagem}>
-                    <Bairro />
+                        <Text style={styles.EmailSenha}>Bairro</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Bairro />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="Distrito Industrial I"
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="Distrito Industrial I"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="bairro"
+                                rules={{ required: "Bairro é obrigatório" }}
                             />
-                        )}
-                        name="bairro"
-                        rules={{ required: "Bairro é obrigatório" }}
-                    />
-                </View>
-                {errors.bairro && <Text style={styles.errorText}>{errors.bairro.message as string}</Text>}
+                        </View>
+                        {errors.bairro && <Text style={styles.errorText}>{errors.bairro.message as string}</Text>}
 
 
-                <Text style={styles.EmailSenha}>Ponto de Referência</Text>
-                <View style={styles.GmailComImagem}>
-                    <Logradouro />
+                        <Text style={styles.EmailSenha}>Ponto de Referência</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Logradouro />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="Fundação Matias Machline"
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="Fundação Matias Machline"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="ponto_referencai"
+                                rules={{ required: "Ponto de referência é obrigatório" }}
                             />
-                        )}
-                        name="ponto_referencai"
-                        rules={{ required: "Ponto de referência é obrigatório" }}
-                    />
-                </View>
-                {errors.ponto_referencai && <Text style={styles.errorText}>{errors.ponto_referencai.message as string}</Text>}
+                        </View>
+                        {errors.ponto_referencai && <Text style={styles.errorText}>{errors.ponto_referencai.message as string}</Text>}
 
 
-                <Text style={styles.EmailSenha}>Tipo de local</Text>
-                <View style={styles.GmailComImagem}>
-                    <Text>   </Text>
+                        <Text style={styles.EmailSenha}>Tipo de local</Text>
+                        <View style={styles.GmailComImagem}>
+                            <Text>   </Text>
 
-                    <TipoLocal />
+                            <TipoLocal />
 
-                    <Controller
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                style={styles.Input}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder="Fundação Matias Machline"
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        style={styles.Input}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder="Fundação Matias Machline"
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+                                name="tipo_local"
+                                rules={{ required: "Tipo de Local é obrigatório" }}
                             />
-                        )}
-                        name="tipo_local"
-                        rules={{ required: "Tipo de Local é obrigatório" }}
-                    />
-                </View>
-                {errors.tipo_local && <Text style={styles.errorText}>{errors.tipo_local.message as string}</Text>}
+                        </View>
+                        {errors.tipo_local && <Text style={styles.errorText}>{errors.tipo_local.message as string}</Text>}
 
-                <Text style={styles.TextRandom}>
-                    Descrição
-                </Text>
-                <View style={styles.Desc}>
-                    <View style={styles.DescLogo}>
+                        <Text style={styles.TextRandom}>
+                            Descrição
+                        </Text>
+                        <View style={styles.Desc}>
+                            <View style={styles.DescLogo}>
 
-                        <Descricao />
-                    </View>
-                    <Controller
+                                <Descricao />
+                            </View>
+                            <Controller
 
-                        control={control}
-                        render={({ field }) => (
-                            <TextInput
-                                multiline={true}
-                                numberOfLines={5}
-                                style={styles.InputDescricao}
-                                onChangeText={(value) => field.onChange(value)}
-                                value={field.value}
-                                placeholder=""
-                                placeholderTextColor="#808080"
+                                control={control}
+                                render={({ field }) => (
+                                    <TextInput
+                                        multiline={true}
+                                        numberOfLines={5}
+                                        style={styles.InputDescricao}
+                                        onChangeText={(value) => field.onChange(value)}
+                                        value={field.value}
+                                        placeholder=""
+                                        placeholderTextColor="#808080"
+                                    />
+                                )}
+
+
+                                name="descricao"
+                                rules={{ required: "Tipo de Local é obrigatório" }}
                             />
-                        )}
+                        </View>
+
+                        {errors.descricao && <Text style={styles.errorText}>{errors.descricao.message as string}</Text>}
 
 
-                        name="descricao"
-                        rules={{ required: "Tipo de Local é obrigatório" }}
-                    />
-                </View>
-
-                {errors.descricao && <Text style={styles.errorText}>{errors.descricao.message as string}</Text>}
-
-
-                <TouchableOpacity style={styles.Button} onPress={handleConfirmCreateBO}>
-                    <Text style={styles.ButtonTextRandom}>Realizar registro de B.O</Text>
-                </TouchableOpacity>
+                        <TouchableOpacity style={styles.Button} onPress={handleConfirmCreateBO}>
+                            <Text style={styles.ButtonTextRandom}>Realizar registro de B.O</Text>
+                        </TouchableOpacity>
+                    </>
+                }
 
                 <Modal
                     animationType="slide"

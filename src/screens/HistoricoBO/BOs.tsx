@@ -53,16 +53,19 @@ export default function Historico({ navigation }: any) {
                         let dia = data.getDate();
                         let mes = data.getMonth() + 1;
                         let ano = data.getFullYear();
-                            let hora = data.toLocaleString('pt-BR', {timeZone: "America/Manaus", hour: "2-digit", minute: "2-digit"});
+                        let hora = data.toLocaleString('pt-BR', { timeZone: "America/Manaus", hour: "2-digit", minute: "2-digit" });
                         return (
-                            <View style={styles.DelegaciasProximasButtons} >
+                            <TouchableOpacity
+                                style={styles.DelegaciasProximasButtons}
+                                onPress={() => navigation.navigate('BoDetalhes', { item })}
+                            >
                                 <View style={{ width: '60%' }}>
                                     <Text style={styles.Natureza}>{item.natureza}  </Text>
                                     <Text style={styles.NomedaDelegaciaText2}>Registrado {`${dia}/${mes}/${ano}`}, {hora} </Text>
                                     <Text style={styles.FuncionamentoDelegacia}>Situação: {item.situacao}</Text>
                                 </View>
 
-                            </View>
+                            </TouchableOpacity>
 
 
 
