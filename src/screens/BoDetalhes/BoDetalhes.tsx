@@ -17,7 +17,7 @@ export default function BoDetalhes({ route, navigation }: any) {
             <View style={styles.ViewAlert}>
                 <Text style={styles.Natureza}>Natureza: {item.natureza}</Text>
                 <Text style={styles.NomedaDelegaciaText2}>Registrado em {`${dia}/${mes}/${ano}`} às {hora}</Text>
-                <Text style={styles.FuncionamentoDelegacia}>Situação: {item.situacao}</Text>
+                <Text style={styles.FuncionamentoDelegacia}>Situação: {item.Situacao}</Text>
                 {/* Adicione outros detalhes conforme necessário */}
             </View>
         </SafeAreaView>

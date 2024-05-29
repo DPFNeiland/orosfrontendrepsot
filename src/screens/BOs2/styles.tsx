@@ -114,7 +114,7 @@ export const styles = StyleSheet.create({
         height: height * 0.05,
         width: "80%",
         fontFamily: 'GothamLight',
-        color: "#808080"
+        color: "black"
 
     },
 

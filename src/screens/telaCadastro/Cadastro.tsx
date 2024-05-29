@@ -902,7 +902,7 @@ export default function Cadastro({ navigation }: any) {
                 <Text style={styles.buttonLogin}>Cadastrar</Text>
               </TouchableOpacity>
             ) : (
-              <TouchableOpacity onPress={handleSubmit(handleSignInfront)} style={styles.Buttonantecadastro}>
+              <TouchableOpacity style={styles.Buttonantecadastro}>
                 <Text style={styles.buttonanteCadastro}>Preencha todos os campos para se Cadastar</Text>
               </TouchableOpacity>
             )

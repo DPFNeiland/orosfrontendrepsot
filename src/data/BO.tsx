@@ -4,7 +4,7 @@ export async function getBOList(iddousuario: number | undefined) {
   if (!iddousuario) {
     throw new Error('iddousuario é null ou undefined');
   }
-  const listagem = `${apiBO}/${iddousuario}`;
+  const listagem = `${apiBO}/user/${iddousuario}`;
   try {
     const response = await fetch(listagem);
     if (!response.ok) {

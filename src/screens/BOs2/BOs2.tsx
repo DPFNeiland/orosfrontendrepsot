@@ -155,7 +155,7 @@ export default function BOs2({ navigation }: any) {
 
                             <TouchableOpacity
                                 style={styles.Input}
-                                
+
                                 onPress={() => {
                                     setNaturezaDoCrime(true)
                                 }}
@@ -232,42 +232,42 @@ export default function BOs2({ navigation }: any) {
 
 
                         <Modal
-                                animationType="slide"
-                                transparent={true}
-                                visible={naturezadocrime}
+                            animationType="slide"
+                            transparent={true}
+                            visible={naturezadocrime}
 
-                            >
-                                <View style={styles.modal}>
-                                    <Text style={styles.TextconfirmBO}>Qual a natureza do crime?</Text>
+                        >
+                            <View style={styles.modal}>
+                                <Text style={styles.TextconfirmBO}>Qual a natureza do crime?</Text>
 
-                                    <View style={styles.viewbotoes}>
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                setNaturezaDoCrime(false)
-                                                setNatureza("Furto")
-                                                console.log('Furto')
-                                            }}
-                                            style={styles.naobutton}
-                                        >
-                                            <Text style={styles.textbutton}>Furto</Text>
-                                        </TouchableOpacity>
+                                <View style={styles.viewbotoes}>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            setNaturezaDoCrime(false)
+                                            setNatureza("Furto")
+                                            console.log('Furto')
+                                        }}
+                                        style={styles.naobutton}
+                                    >
+                                        <Text style={styles.textbutton}>Furto</Text>
+                                    </TouchableOpacity>
 
 
 
-                                        <TouchableOpacity
-                                            onPress={() => {
-                                                setNaturezaDoCrime(false)
-                                                setNatureza("Roubo")
-                                                console.log('Roubo')
-                                            }}
-                                            style={styles.simbutton}
-                                        >
-                                            <Text style={styles.textbutton}>Roubo</Text>
-                                        </TouchableOpacity>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            setNaturezaDoCrime(false)
+                                            setNatureza("Roubo")
+                                            console.log('Roubo')
+                                        }}
+                                        style={styles.simbutton}
+                                    >
+                                        <Text style={styles.textbutton}>Roubo</Text>
+                                    </TouchableOpacity>
 
-                                    </View>
                                 </View>
-                            </Modal>
+                            </View>
+                        </Modal>
 
                         <Text style={styles.TextRandom}>
                             Quando Ocorreu?
@@ -295,6 +295,11 @@ export default function BOs2({ navigation }: any) {
                             />
                         </View>
                         {errors.hora_ocorrido && <Text style={styles.errorText}>{errors.hora_ocorrido.message as string}</Text>}
+
+
+
+
+
 
                         <Text style={styles.EmailSenha}>Data</Text>
                         <View style={styles.GmailComImagem}>
@@ -557,7 +562,7 @@ export default function BOs2({ navigation }: any) {
 
 
                                 name="descricao"
-                                rules={{ required: "Tipo de Local é obrigatório" }}
+                                rules={{ required: "Descrição é obrigatório" }}
                             />
                         </View>
 

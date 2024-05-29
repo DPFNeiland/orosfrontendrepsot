@@ -12,7 +12,8 @@ interface BOItem {
     id: number;
     data_ocorrido: string;
     situacao: string;
-    natureza: string
+    natureza: string;
+    Situacao: string
     // Adicione outras propriedades conforme necessário
 }
 
@@ -62,7 +63,7 @@ export default function Historico({ navigation }: any) {
                                 <View style={{ width: '60%' }}>
                                     <Text style={styles.Natureza}>{item.natureza}  </Text>
                                     <Text style={styles.NomedaDelegaciaText2}>Registrado {`${dia}/${mes}/${ano}`}, {hora} </Text>
-                                    <Text style={styles.FuncionamentoDelegacia}>Situação: {item.situacao}</Text>
+                                    <Text style={styles.FuncionamentoDelegacia}>Situação: {item.Situacao}</Text>
                                 </View>
 
                             </TouchableOpacity>
