@@ -90,7 +90,8 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     height: 42,
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    padding: 10,
+    justifyContent: 'space-around',
     borderColor: '#E0E6F7',
     borderWidth: 2,
     elevation: 1,
@@ -98,7 +99,7 @@ export const styles = StyleSheet.create({
   },
 
   TextButtonHistorico: {
-    fontSize: 13,
+    fontSize: 14,
     fontFamily: 'GothamMedium',
 
   },

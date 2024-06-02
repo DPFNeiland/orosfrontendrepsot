@@ -139,9 +139,9 @@ export default function Home({ navigation }: any) {
                         </View>
 
                         <View >
-                            <TouchableOpacity style={styles.HistoricoChamadaButton} onPress={handleEmergencia}>
+                            <TouchableOpacity style={styles.HistoricoChamadaButton} onPress={()=>{navigation.navigate('ListaDeTelefones')}}>
                                 <HistoricoChamada />
-                                <Text style={styles.TextButtonHistorico}> Histórico de chamadas de emergência</Text>
+                                <Text style={styles.TextButtonHistorico}>Mais números de emergência</Text>
                             </TouchableOpacity>
                         </View>
 
