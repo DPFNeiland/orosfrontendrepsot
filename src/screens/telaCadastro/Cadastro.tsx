@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, Pressable, ScrollView, Image } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Pressable, ScrollView, Image, Alert } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 import { styles } from "./Styles";
 import Nomecomplet from "../../components/AuthSVG/nomeCompleto";
@@ -8,7 +8,6 @@ import EyeCrossed from "../../components/AuthSVG/eyecrossed";
 import Gmail from "../../components/AuthSVG/gmail";
 import Cadeado from "../../components/AuthSVG/cadeado";
 import { useState } from "react";
-import { useAuth } from "../../contexts/auth";
 import Eyeopen from "../../components/AuthSVG/eyeopen";
 import Datadenascimento from "../../components/AuthSVG/datadenascimento";
 import { useEffect } from "react";
@@ -33,20 +32,9 @@ import Numero from "../../components/AuthSVG/Numero";
 import Logradouro from "../../components/AuthSVG/Logradouro";
 import Complemento from "../../components/AuthSVG/Complemento";
 import Cep from "../../components/AuthSVG/cep";
-
-
-type Formdata = {
-  nome: string
-  naturalidade: string
-  estadocivil: string
-  datadenascimento: string
-  email: string
-  cpf: string
-  cep: string
-  telefone: string
-  senha: string
-  confirmsenha: string
-}
+import { UsuarioService } from "../../../services/api/UsuarioService";
+import axios from "axios";
+import { apisigupnback } from "../../../services/api/api.endpoints";
 
 export default function Cadastro({ navigation }: any) {
   const { control, handleSubmit, formState: { errors }, watch, setValue } = useForm();
@@ -68,7 +56,6 @@ export default function Cadastro({ navigation }: any) {
   const filiacaopai = watch('FiliacaoPai')
   const genero = watch('genero')
   const orientationsex = watch('OrientacaoSexual')
-  const rg = watch('rg')
   const ssp = watch('SSP')
   const UfOrgaoEmissor = watch('UfOrgaoEmissor')
   const Nacionalidade = watch('Nacionalidade')
@@ -84,6 +71,7 @@ export default function Cadastro({ navigation }: any) {
   const logradouro = watch('logradouro')
   const complemento = watch('complemento')
   const cep = watch('cep')
+  const Rg = watch('rg')
 
 
 
@@ -92,12 +80,78 @@ export default function Cadastro({ navigation }: any) {
 
   const [hidePassconfirm, setHidePassconfirm] = useState(true)
 
-  const { signed, login, user } = useAuth()
+  const handleSignUPawait = async () => {
+    try {
+      // Obtenha os dados do formulário
+      const data = {
+        nome: watch('nome'),
+        cpf: watch('cpf'),
+        email: watch('email'),
+        senha: watch('senha'),
+        confirmsenha: watch('confirmsenha'),
 
-  const handleSignInfront = async (data: any) => {
-    login(data)
-    console.log(user)
-  };  //  <Text>Data de Nascimento: {date.toLocaleDateString()}</Text>
+        Apelido: watch('Apelido'),
+        NomeSocial: watch('NomeSocial'),
+        FiliacaoMae: watch('FiliacaoMae'),
+        FiliacaoPai: watch('FiliacaoPai'),
+        genero: watch('genero'),
+        OrientacaoSexual: watch('OrientacaoSexual'),
+        rg: watch('rg'),
+        SSP: watch('SSP'),
+        UfOrgaoEmissor: watch('UfOrgaoEmissor'),
+        Nacionalidade: watch('Nacionalidade'),
+        UFdenaturalidade: watch('UFdenaturalidade'),
+        Profissao: watch('Profissao'),
+
+        estado: watch('estado'),
+        municipio: watch('municipio'),
+        endereco: watch('endereco'),
+        bairro: watch('bairro'),
+        numero: watch('numero'),
+        logradouro: watch('logradouro'),
+        complemento: watch('complemento'),
+        cep: watch('cep'),
+        apelido: watch('apelido'),
+        nomesocial: watch('nomesocial'),
+        filiacaomae: watch('filiacaomae'),
+        ssp: watch('ssp'),
+        naturalidade: watch('naturalidade'),
+        profissao: watch('profissao'),
+        nameCompleto: watch('nameCompleto'),
+        CadastroDePessoaFisica: watch('CadastroDePessoaFisica'),
+        gemail: watch('gemail'),
+        password: watch('password'),
+
+        IdentidadeDeGenero: watch('IdentidadeDeGenero')
+        // Adicione outros campos conforme necessário
+      };
+
+      console.log(data)
+
+      // Faça a requisição
+      const response = await fetch(apisigupnback, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        navigation.navigate('Login');
+
+        console.log('Cadastro realizado com sucesso:', result);
+      } else {
+        // Erro na requisição
+        console.error('Erro ao realizar o cadastro:', result);
+      }
+    } catch (error) {
+      console.error('Erro na requisição:', error);
+    }
+
+  }
 
 
 
@@ -412,7 +466,7 @@ export default function Cadastro({ navigation }: any) {
                     <Picker
                       style={styles.Picker}
                       selectedValue={value}
-                      onValueChange={(itemValue, itemindex) => onChange(itemValue)}
+                      onValueChange={(itemValue) => onChange(itemValue)}
                       itemStyle={{ color: '#808080' }}
                     >
                       <Picker.Item label="Masculino" value="masculino" />
@@ -684,7 +738,7 @@ export default function Cadastro({ navigation }: any) {
 
           }
 
-          {apelido && nomesocial && filiacaomae && rg && ssp && UfOrgaoEmissor && Nacionalidade && UFdenaturalidade && naturalidade && profissao && nameCompleto && CadastroDePessoaFisica && gemail && password && (
+          {apelido && nomesocial && filiacaomae && Rg && ssp && UfOrgaoEmissor && Nacionalidade && UFdenaturalidade && naturalidade && profissao && nameCompleto && CadastroDePessoaFisica && gemail && password && (
 
             <View style={styles.autorizacao}>
               <TouchableOpacity onPress={() => setAutorizarion(!autorization)} >
@@ -698,7 +752,7 @@ export default function Cadastro({ navigation }: any) {
 
           }
 
-          {autorization && apelido && nomesocial && filiacaomae && rg && ssp && UfOrgaoEmissor && Nacionalidade && UFdenaturalidade && naturalidade && profissao && nameCompleto && CadastroDePessoaFisica && gemail && password &&
+          {autorization && apelido && nomesocial && filiacaomae && Rg && ssp && UfOrgaoEmissor && Nacionalidade && UFdenaturalidade && naturalidade && profissao && nameCompleto && CadastroDePessoaFisica && gemail && password &&
 
             <>
               <Text style={styles.dadospessoais}>Localização</Text>
@@ -897,12 +951,12 @@ export default function Cadastro({ navigation }: any) {
           {errorMessage && <Text style={styles.errorText}>{errorMessage}</Text>}
 
           {
-            apelido && nomesocial && filiacaomae && rg && ssp && UfOrgaoEmissor && Nacionalidade && UFdenaturalidade && naturalidade && profissao && nameCompleto && CadastroDePessoaFisica && gemail && password ? (
-              <TouchableOpacity onPress={handleSubmit(handleSignInfront)} style={styles.Button}>
+            apelido && nomesocial && filiacaomae && Rg && ssp && UfOrgaoEmissor && Nacionalidade && UFdenaturalidade && naturalidade && profissao && nameCompleto && CadastroDePessoaFisica && gemail && password ? (
+              <TouchableOpacity onPress={handleSignUPawait} style={styles.Button}>
                 <Text style={styles.buttonLogin}>Cadastrar</Text>
               </TouchableOpacity>
             ) : (
-              <TouchableOpacity style={styles.Buttonantecadastro}>
+              <TouchableOpacity onPress={handleSignUPawait} style={styles.Buttonantecadastro}>
                 <Text style={styles.buttonanteCadastro}>Preencha todos os campos para se Cadastar</Text>
               </TouchableOpacity>
             )

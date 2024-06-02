@@ -21,7 +21,7 @@ export default function Login({ navigation }: any) {
 
   const handleSignInfront = async (data: any) => {
 
-    try{
+    try {
       await login(data)
       console.log(user)
 
@@ -62,23 +62,23 @@ export default function Login({ navigation }: any) {
             control={control}
             render={({ field }) => (
               <TextInput
-              style={styles.Input}
-              onChangeText={(value) => field.onChange(value)}
-              value={field.value}
-              placeholder="123.456.789-00"
-              placeholderTextColor="#808080"
-              keyboardType="numeric"
-            />
-          )}
-          name="cpf"
-          rules={{
-            required: 'CPF é obrigatório',
-            pattern: {
-              value: /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,
-              message: "Digite um CPF válido"
-            }
-          }}
-        />
+                style={styles.Input}
+                onChangeText={(value) => field.onChange(value)}
+                value={field.value}
+                placeholder="123.456.789-00"
+                placeholderTextColor="#808080"
+                keyboardType="numeric"
+              />
+            )}
+            name="cpf"
+            rules={{
+              required: 'CPF é obrigatório',
+              pattern: {
+                value: /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,
+                message: "Digite um CPF válido"
+              }
+            }}
+          />
         </View>
         {errors.cpf && <Text style={styles.errorText}>Digite um CPF válido</Text>}
 
@@ -108,9 +108,9 @@ export default function Login({ navigation }: any) {
             />
           </View>
 
-          <TouchableOpacity onPress={() => setHidePass(!hidePass)}  style={styles.Openeye}>
+          <TouchableOpacity onPress={() => setHidePass(!hidePass)} style={styles.Openeye}>
             {
-               hidePass ? <Eyeopen/> : <EyeCrossed />
+              hidePass ? <Eyeopen /> : <EyeCrossed />
             }
           </TouchableOpacity>
 

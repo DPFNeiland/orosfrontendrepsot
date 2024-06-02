@@ -1,7 +1,7 @@
 import * as React from "react"
 import Svg, { G, Path, Defs, ClipPath } from "react-native-svg"
 
-function Naturalidade(props: any) {
+function NATURALIDADE(props: any) {
   return (
     <Svg
       width={20}
@@ -29,4 +29,4 @@ function Naturalidade(props: any) {
   )
 }
 
-export default Naturalidade
+export default NATURALIDADE

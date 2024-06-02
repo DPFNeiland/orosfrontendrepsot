@@ -4,11 +4,11 @@ import { UsuarioService } from "../../services/api/UsuarioService";
 import api from "../../services/api/api";
 
 interface AuthContextData {
-    signed: boolean,
-    user: User | null,
-    loading: boolean,
-    login(data: any): Promise<any>,
-    signOut(): void,
+    signed: boolean;
+    user: User | null;
+    loading: boolean;
+    login(data: any): Promise<any>;
+    signOut(): void;
 }
 
 interface AuthProviderProps {
@@ -16,73 +16,62 @@ interface AuthProviderProps {
 }
 
 interface User {
-    id: number,
-    nome: string,
-    naturalidade: string,
-    estadocivil: string,
-    datadenascimento: string,
-    email: string,
-    cpf: string,
-    cep: string,
-    senha: string,
-    idade: number | null,
-    telefone: string
+    id: number;
+    nome: string;
+    naturalidade: string;
+    estadocivil: string;
+    datadenascimento: string;
+    email: string;
+    cpf: string;
+    cep: string;
+    senha: string;
+    idade: number | null;
+    telefone: string;
 }
 
-const AuthContext = createContext<AuthContextData>({} as AuthContextData)
+const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-    const [user, setUser] = useState<User | null>(null)
-    const [loading, setLoading] = useState(true)
+    const [user, setUser] = useState<User | null>(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadStoraged() {
-            // multiget
-
-            const storageUser = await AsyncStorage.getItem('RNAuth:user')
-            const storageToken = await AsyncStorage.getItem('RNAuth:token')
+            const storageUser = await AsyncStorage.getItem('RNAuth:user');
+            const storageToken = await AsyncStorage.getItem('RNAuth:token');
 
             if (storageToken && storageUser) {
-                api.defaults.headers['Authorization'] = `Bearer ${storageToken}`
-
-
-                setUser(JSON.parse(storageUser))
-                setLoading(false)
+                api.defaults.headers['Authorization'] = `Bearer ${storageToken}`;
+                setUser(JSON.parse(storageUser));
+                setLoading(false);
             }
-
         }
 
-        loadStoraged()
-    }, [])
+        loadStoraged();
+    }, []);
 
     const usuarioService = new UsuarioService();
 
     async function login(data: any) {
-
         try {
-            const Response = await usuarioService.login(data)
-            setUser(Response.user)
+            const Response = await usuarioService.login(data);
+            setUser(Response.user);
 
-            api.defaults.headers['Authorization'] = `Bearer ${Response.access_token}`
+            api.defaults.headers['Authorization'] = `Bearer ${Response.access_token}`;
 
-            await AsyncStorage.setItem('RNAuth:user', JSON.stringify(Response.user))
-            await AsyncStorage.setItem('RNAuth:token', Response.access_token)
-
-        } catch(error: any) {
-            console.log('contexto => ', error)
-            throw new Error(error)
+            await AsyncStorage.setItem('RNAuth:user', JSON.stringify(Response.user));
+            await AsyncStorage.setItem('RNAuth:token', Response.access_token);
+        } catch (error: any) {
+            console.log('contexto => ', error);
+            throw new Error(error);
         }
-
-
     }
 
     function signOut() {
         AsyncStorage.clear().then(() => {
-            setUser(null)
-        })
+            setUser(null);
+        });
     }
-
-
 
     return (
         <AuthContext.Provider value={{
@@ -94,10 +83,10 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }}>
             {children}
         </AuthContext.Provider>
-    )
+    );
 }
-export function useAuth() {
-    const context = useContext(AuthContext)
 
+export function useAuth() {
+    const context = useContext(AuthContext);
     return context;
 }
