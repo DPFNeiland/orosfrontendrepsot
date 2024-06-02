@@ -12,7 +12,7 @@ export const markers = [
         name: '1º DIP - Distrito Integrado de Polícia',
         nameabrev: '1º DIP',
         type: 'DIP',
-        telefone: 'dasdsasa'
+        telefone: '92 3667 7601'
     },
 
     {
@@ -22,7 +22,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '2º DIP - Distrito Integrado de Polícia',
         nameabrev: '2º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7602'
     },
 
     {
@@ -32,7 +33,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '3º DIP - Distrito Integrado de Polícia',
         nameabrev: '3º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7603'
     },
 
     {
@@ -42,7 +44,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '4º DIP - Distrito Integrado de Polícia',
         nameabrev: '4º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7604'
     },
 
     {
@@ -52,7 +55,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '5º DIP - Distrito Integrado de Polícia',
         nameabrev: '5º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7605'
     },
     {
         latitude: -3.0320327,
@@ -61,7 +65,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '6º DIP - Distrito Integrado de Polícia',
         nameabrev: '6º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7606'
     },
 
     {
@@ -71,7 +76,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '7º DIP - Distrito Integrado de Polícia',
         nameabrev: '7º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7607'
     },
 
     {
@@ -81,7 +87,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '8º DIP - Distrito Integrado de Polícia',
         nameabrev: '8º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7608'
     },
 
     {
@@ -91,7 +98,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '9º DIP - Distrito Integrado de Polícia',
         nameabrev: '9º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7609'
     },
 
     {
@@ -101,7 +109,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '10º DIP - Distrito Integrado de Polícia',
         nameabrev: '10º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7610'
     },
 
     {
@@ -111,7 +120,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '11º DIP - Distrito Integrado de Polícia',
         nameabrev: '11º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7611'
     },
 
     {
@@ -121,7 +131,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '12º DIP - Distrito Integrado de Polícia',
         nameabrev: '12º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7612'
     },
 
     {
@@ -131,7 +142,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '13º DIP - Distrito Integrado de Polícia',
         nameabrev: '13º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7613'
     },
 
     {
@@ -141,7 +153,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '14º DIP - Distrito Integrado de Polícia',
         nameabrev: '14º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7614'
     },
 
 
@@ -152,7 +165,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '15º DIP - Distrito Integrado de Polícia',
         nameabrev: '15º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7615'
     },
 
     {
@@ -162,7 +176,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '16º DIP - Distrito Integrado de Polícia',
         nameabrev: '16º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7616'
     },
 
     {
@@ -172,7 +187,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '17º DIP - Distrito Integrado de Polícia',
         nameabrev: '17º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7617'
     },
 
     {
@@ -182,17 +198,19 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '18º DIP - Distrito Integrado de Polícia',
         nameabrev: '18º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7618'
     },
 
     {
         latitude: -3.085989544627857,
-        longitude: -60. ,
+        longitude: -60.,
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
         name: '19º DIP - Distrito Integrado de Polícia',
         nameabrev: '19º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7619'
     },
 
     {
@@ -202,7 +220,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '20º DIP - Distrito Integrado de Polícia',
         nameabrev: '20º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7620'
     },
 
     {
@@ -212,7 +231,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '21º DIP - Distrito Integrado de Polícia',
         nameabrev: '21º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7621'
     },
 
     {
@@ -222,7 +242,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '22º DIP - Distrito Integrado de Polícia',
         nameabrev: '22º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7622'
     },
 
     {
@@ -232,7 +253,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '23º DIP - Distrito Integrado de Polícia',
         nameabrev: '23º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7623'
     },
 
     {
@@ -242,7 +264,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '24º DIP - Distrito Integrado de Polícia',
         nameabrev: '24º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7624'
     },
 
     {
@@ -252,7 +275,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '25º DIP - Distrito Integrado de Polícia',
         nameabrev: '25º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7625'
     },
 
     {
@@ -262,7 +286,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '26º DIP - Distrito Integrado de Polícia',
         nameabrev: '26º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7626'
     },
 
     {
@@ -272,7 +297,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '28º DIP - Distrito Integrado de Polícia',
         nameabrev: '28º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7628'
     },
 
     {
@@ -282,7 +308,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '29º DIP - Distrito Integrado de Polícia',
         nameabrev: '29º DIP',
-        type: 'DIP'
+        type: 'DIP',
+        telefone: '92 3667 7629'
     },
 
     // CICOM
@@ -294,7 +321,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '27º CICOM',
         nameabrev: '27º CICOM',
-        type: 'CICOM'
+        type: 'CICOM',
+        telefone: '92 3667 7627'
     },
 
 
@@ -305,7 +333,8 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '30º CICOM',
         nameabrev: '30º CICOM',
-        type: 'CICOM'
-    }, 
+        type: 'CICOM',
+        telefone: '92 3667 7627'
+    },
 ]
 

@@ -45,7 +45,6 @@ export default function Home({ navigation }: any) {
         }, (response) => {
             setLocation(response);
             mapRef.current?.animateCamera({
-                // pitch: 70,
                 center: response.coords
             })
         })
@@ -139,7 +138,7 @@ export default function Home({ navigation }: any) {
                         </View>
 
                         <View >
-                            <TouchableOpacity style={styles.HistoricoChamadaButton} onPress={()=>{navigation.navigate('ListaDeTelefones')}}>
+                            <TouchableOpacity style={styles.HistoricoChamadaButton} onPress={() => { navigation.navigate('ListaDeTelefones') }}>
                                 <HistoricoChamada />
                                 <Text style={styles.TextButtonHistorico}>Mais números de emergência</Text>
                             </TouchableOpacity>
@@ -176,13 +175,16 @@ export default function Home({ navigation }: any) {
                         <View style={styles.DelegaciasProximasButtons} /* 1º Delegacia */>
                             <MapSVG />
                             {closestDelegacias.length > 0 && closestDelegacias[0].nameabrev && (
-                                <View style={{ width: '60%' }}>
+                                <View style={{ width: '60%' }} >
                                     <Text style={styles.NomedaDelegaciaText}>{closestDelegacias[0].nameabrev}</Text>
                                     {/* Adicione mais informações da delegacia conforme necessário */}
                                 </View>
                             )}
 
-                            <TelefoneDelegacia />
+                            <TelefoneDelegacia onPress={() => {
+                                let telnumero = 'tel:' + closestDelegacias[0].telefone;
+                                Linking.openURL(telnumero);
+                            }} />
                         </View>
                         <Text style={styles.linhacolor}>     ————————————————————————</Text>
                         <View style={styles.DelegaciasProximasButtons} /* 1º Delegacia */>
@@ -194,7 +196,10 @@ export default function Home({ navigation }: any) {
                                 </View>
                             )}
 
-                            <TelefoneDelegacia />
+                            <TelefoneDelegacia onPress={() => {
+                                let telnumero = 'tel:' + closestDelegacias[1].telefone;
+                                Linking.openURL(telnumero);
+                            }} />
                         </View>
                         <Text style={styles.linhacolor}>     ————————————————————————</Text>
 
@@ -207,7 +212,10 @@ export default function Home({ navigation }: any) {
                                 </View>
                             )}
 
-                            <TelefoneDelegacia />
+                            <TelefoneDelegacia onPress={() => {
+                                let telnumero = 'tel:' + closestDelegacias[2].telefone;
+                                Linking.openURL(telnumero);
+                            }} />
                         </View>
 
                     </View>
