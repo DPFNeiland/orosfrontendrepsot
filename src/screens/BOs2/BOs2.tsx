@@ -21,6 +21,7 @@ import axios from "axios";
 import { apiCriarBO } from "../../../services/BOapi/BO.endpoint";
 import AwesomeAlert from "react-native-awesome-alerts";
 import { useAuth } from "../../contexts/auth";
+import GoBack from "../../../assets/BotoesDelegacias/GoBack.svg"
 
 
 export default function BOs2({ navigation }: any) {
@@ -29,19 +30,19 @@ export default function BOs2({ navigation }: any) {
 
 
     /* API VIA CEP */
-    const cep = watch('cep_ocorrido')
+    // const cep = watch('cep_ocorrido')
 
-    useEffect(() => {
-        if (cep?.length === 8) {
-            fetch(`https://viacep.com.br/ws/${cep}/json/`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.localidade) {
-                        setValue('municipioBO', data.localidade);
-                    }
-                });
-        }
-    }, [cep, setValue]);
+    // useEffect(() => {
+    //     if (cep?.length === 8) {
+    //         fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    //             .then(response => response.json())
+    //             .then(data => {
+    //                 if (data.localidade) {
+    //                     setValue('municipioBO', data.localidade);
+    //                 }
+    //             });
+    //     }
+    // }, [cep, setValue]);
 
     /* FIM API VIA CEP */
     const [date, setDate] = useState(new Date());
@@ -137,11 +138,15 @@ export default function BOs2({ navigation }: any) {
     return (
 
         <SafeAreaView style={styles.areaview}>
+            <TouchableOpacity style={{ position: 'absolute', zIndex: 100, top: "5%", left: "3%" }} onPress={() => navigation.goBack()}>
+                <GoBack />
+            </TouchableOpacity>
+
             <ScrollView
                 showsVerticalScrollIndicator={false}
             >
 
-                <Text style={styles.TextRegisto}>Registro de B.O</Text>
+                <Text style={styles.TextRegisto}>    Registro de B.O</Text>
 
                 {natureza == "" &&
                     <>

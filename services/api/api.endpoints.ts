@@ -1,4 +1,4 @@
-export const nestjsBackEndGnrok = "https://7c73-2804-214-86a0-6f7a-6954-24a0-b12c-18f.ngrok-free.app"
+export const nestjsBackEndGnrok = "https://ff02-2804-214-86a2-5fb9-ec6d-9e17-9862-a2a0.ngrok-free.app"
 
 
 // api.tsx

@@ -29,7 +29,7 @@ export default function App() {
     // Simulando o carregamento da API do Google Maps
     const timer = setTimeout(() => {
       setIsMapViewLoaded(true);
-    }, 15000); // Ajuste o tempo conforme necessário para o carregamento real da API do Google Maps
+    }, 1000); // Ajuste o tempo conforme necessário para o carregamento real da API do Google Maps
     return () => clearTimeout(timer);
   }, []);
 

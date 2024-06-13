@@ -336,5 +336,39 @@ export const markers = [
         type: 'CICOM',
         telefone: '92 3667 7627'
     },
+
+    // DECCM 
+    {
+        latitude: -3.0880368,
+        longitude: -60.0190509,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECCM – Crimes contra a Mulher – PQ10',
+        nameabrev: 'DECCM',
+        type: 'DECCM',
+        telefone: '92 3667 7734'
+    },
+
+    {
+        latitude: -3.0172068,
+        longitude: -59.9386373,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECCM – Crimes contra a Mulher– Norte/Leste',
+        nameabrev: 'DECCM - Norte/Leste',
+        type: 'DECCM',
+        telefone: '92 3667 7735'
+    },
+
+    {
+        latitude: -3.1417968,
+        longitude: -60.0087645,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECCM - Crimes contra a Mulher – Sul/Oeste',
+        nameabrev: 'DECCM - Sul/Oeste',
+        type: 'DECCM',
+        telefone: '92 3667 7737'
+    },
 ]
 

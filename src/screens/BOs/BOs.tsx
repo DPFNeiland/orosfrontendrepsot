@@ -3,7 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 import Obos from "../../components/AuthSVG/obos";
 import OROS from "../../components/Home/OROS";
-
+import GoBack from "../../../assets/BotoesDelegacias/GoBack.svg"
 
 export default function BOs({ navigation }: any) {
 
@@ -11,6 +11,10 @@ export default function BOs({ navigation }: any) {
     return (
 
         <SafeAreaView style={styles.areaview}>
+
+            <TouchableOpacity style={{ position: 'absolute', zIndex: 100, top: "5%", left: "3%" }} onPress={() => navigation.goBack()}>
+                <GoBack />
+            </TouchableOpacity>
             <Text style={styles.TextRegisto}>Registro de B.O</Text>
 
             <Text style={styles.TextRandom}>

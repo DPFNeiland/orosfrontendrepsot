@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
   },
   BottomView: {
     alignItems: 'center',
+    flexDirection: 'column'
   },
   MarginText: {
     fontFamily: 'GothamLight',

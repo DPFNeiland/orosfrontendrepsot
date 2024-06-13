@@ -23,7 +23,8 @@
     "react-native": "^0.74.2",
     "react-native-awesome-alerts": "^2.0.0",
     "react-native-maps": "^1.14.0",
-    "react-native-svg": "^15.2.0"
+    "react-native-svg": "15.2.0",
+    "react-native-svg-transformer": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
