@@ -101,9 +101,6 @@ export default function HomeInicial({ navigation }: any) {
                         <Text style={styles.MarginText}>CICOM</Text>
                     </View>
 
-                    <View style={styles.BottomMicrofone}>
-                        <Microfone />
-                    </View>
                     <View style={styles.BottomView}>
                         <TouchableOpacity onPress={() => setDIP(!DIP)} >
                             { DIP ? <DelegaciaDIP /> : <DelegaciaDIP /> }

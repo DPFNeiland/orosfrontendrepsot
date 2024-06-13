@@ -1,7 +1,9 @@
-import React from "react"
-import { View, Text, Linking } from "react-native"
+import React, { useState } from "react"
+import { View, Text, Linking, TouchableOpacity } from "react-native"
 import { styles } from "./styles"
 import TelefoneDelegacia from "../Home/TelefineDelegacia"
+import { Arrow } from "../../../assets/ListaTelefones/Arrow"
+import { ArrowDown } from "../../../assets/ListaTelefones/ArrowDown"
 
 type BOtaoTelefones = {
     numero: string,
@@ -13,30 +15,84 @@ type BOtaoTelefones = {
 
 export function BOtaoTelefones({ numero, subdescricao, descricao, color }: BOtaoTelefones) {
 
+    const [hideDecription, sethideDecription] = useState(true)
+
 
     return (
-        <View style={styles.Botao}>
-            <View>
-                <View style={{ height: '30%' }}>
-                    <View style={styles.TextAlinhado}>
-                        <View style={{ backgroundColor: color, borderRadius: 10, width: 50, height: '110%',  }}>
-                            <Text style={{ fontSize: 15, alignSelf: 'center' }}>{numero}</Text>
+        <>
+            {hideDecription &&
+                <View style={styles.Botao}>
+
+                    <View>
+                        <View >
+                            <View style={styles.TextAlinhado}>
+                                <View style={{ backgroundColor: color, borderRadius: 10, width: 50, height: '110%', }}>
+                                    <Text style={{ fontSize: 15, alignSelf: 'center' }}>{numero}</Text>
+                                </View>
+                                <Text style={styles.TextRegisto}>{subdescricao}</Text>
+                            </View>
                         </View>
-                        <Text style={styles.TextRegisto}>{subdescricao}</Text>
+                        <View style={styles.TextAlinhado}>
+                            <TouchableOpacity onPress={() => { sethideDecription(!hideDecription) }}>
+                                {
+                                    hideDecription ? <Arrow /> : <ArrowDown />
+                                }
+                            </TouchableOpacity>
+                            <Text>Descrição</Text>
+                        </View>
+
+
+
                     </View>
-                </View>
-                <View style={styles.TextAlinhado}>
-                    <Text>A</Text>
-                    <Text>{descricao}</Text>
-                </View>
-            </View>
 
 
-            <TelefoneDelegacia onPress={()=>{
-                let telnumero = 'tel:' + numero;
-                Linking.openURL(telnumero);
-            }} />
-        </View>
+                    <TelefoneDelegacia onPress={() => {
+                        let telnumero = 'tel:' + numero;
+                        Linking.openURL(telnumero);
+                    }} />
+
+                </View>
+            }
+
+            {!hideDecription &&
+                <View style={styles.Botao2}>
+
+                    <View>
+                        <View >
+                            <View style={styles.TextAlinhado}>
+                                <View style={{ backgroundColor: color, borderRadius: 10, width: 50, height: '110%', }}>
+                                    <Text style={{ fontSize: 15, alignSelf: 'center' }}>{numero}</Text>
+                                </View>
+                                <Text style={styles.TextRegisto}>{subdescricao}</Text>
+                            </View>
+                        </View>
+                        <View style={styles.TextAlinhado}>
+                            <TouchableOpacity onPress={() => { sethideDecription(!hideDecription) }}>
+                                {
+                                    hideDecription ? <Arrow /> : <ArrowDown />
+                                }
+                            </TouchableOpacity>
+                            
+                            <View style={{ width: '85%' }}>
+                                <Text>Descrição {'\n'}</Text>
+                                <Text>{descricao}</Text>
+                            </View>
+                        </View>
+
+
+
+                    </View>
+
+
+                    <TelefoneDelegacia onPress={() => {
+                        let telnumero = 'tel:' + numero;
+                        Linking.openURL(telnumero);
+                    }} />
+
+                </View>
+
+            }
+        </>
     )
 
 }
