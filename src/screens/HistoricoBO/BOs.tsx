@@ -46,7 +46,7 @@ export default function Historico({ navigation }: any) {
             <View style={styles.ViewAlert}>
 
 
-                <FlatList
+                <FlatList showsVerticalScrollIndicator={false}
                     data={BOList}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({ item }) => {

@@ -36,12 +36,12 @@ export const styles = StyleSheet.create({
     backgroundColor: '#D9D9D9', 
     borderRadius: 20, 
     shadowColor: '#000',
+    alignItems: 'center',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 5,
     width: 150,
-    alignItems: 'center', 
   },
   TextDelegacia: {
     fontSize: 12,

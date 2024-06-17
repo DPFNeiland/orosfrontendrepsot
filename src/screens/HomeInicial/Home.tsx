@@ -1,4 +1,4 @@
-import {  View, TouchableOpacity, Text, Alert, SafeAreaView } from "react-native";
+import { View, TouchableOpacity, Text, Alert, SafeAreaView, Linking } from "react-native";
 import { styles } from "./StyleHome";
 import { useEffect, useRef, useState } from "react";
 import MapView, { Marker, Callout } from "react-native-maps";
@@ -12,6 +12,7 @@ import IconDel from "../../../assets/BotoesDelegacias/iconDEL.svg"
 import DelMulher from "../../../assets/BotoesDelegacias/DelegaciaMulher.svg"
 import IconDelMulher from "../../../assets/BotoesDelegacias/MulherDel.svg"
 import GoBack from "../../../assets/BotoesDelegacias/GoBack.svg"
+import TelefoneDelegacia from "../../../assets/BotoesDelegacias/TelefoneDelegacia.svg"
 
 export default function HomeInicial({ navigation }: any) {
 
@@ -55,7 +56,7 @@ export default function HomeInicial({ navigation }: any) {
     return (
         <SafeAreaView style={styles.geral}>
 
-            <TouchableOpacity style={{position: 'absolute', zIndex: 100, top: "5%", left: "3%"}} onPress={() => navigation.goBack()}>
+            <TouchableOpacity style={{ position: 'absolute', zIndex: 100, top: "5%", left: "3%" }} onPress={() => navigation.goBack()}>
                 <GoBack />
             </TouchableOpacity>
             <View style={styles.map}>
@@ -84,6 +85,8 @@ export default function HomeInicial({ navigation }: any) {
                                 <Callout tooltip>
                                     <View style={styles.ViewDelegacaia}>
                                         <Text style={styles.TextDelegacia}>{marker.name}</Text>
+                                        <Text style={styles.TextDelegacia}>Aberta</Text>
+                                        <Text style={styles.TextDelegacia}>{marker.telefone}</Text>
                                     </View>
                                 </Callout>
                             </Marker>
@@ -93,9 +96,33 @@ export default function HomeInicial({ navigation }: any) {
                             <Marker key={index} coordinate={marker}>
                                 <IconDel height={40} />
                                 <Callout tooltip>
-                                    <View style={styles.ViewDelegacaia}>
+                                    <TouchableOpacity style={styles.ViewDelegacaia} onPress={() => {
+                                                const telefone = marker.telefone
+                                                const teltelefone = 'tel:' + telefone;
+                                                Linking.openURL(teltelefone);
+                                            }}>
                                         <Text style={styles.TextDelegacia}>{marker.name}</Text>
-                                    </View>
+                                        <Text style={styles.TextDelegacia}>Aberta</Text>
+
+
+                                        <View style={{ alignItems: 'center', flexDirection: 'row' }}>
+
+                                            <TelefoneDelegacia height={15} width={15} onPress={() => {
+                                                const telefone = marker.telefone
+                                                const teltelefone = 'tel:' + telefone;
+                                                Linking.openURL(teltelefone);
+                                            }} />
+
+                                            <Text style={styles.TextDelegacia} onPress={() => {
+                                                const telefone = marker.telefone
+                                                const teltelefone = 'tel:' + telefone;
+                                                Linking.openURL(teltelefone);
+                                            }}>
+                                                {marker.telefone}
+                                            </Text>
+
+                                        </View>
+                                    </TouchableOpacity>
                                 </Callout>
                             </Marker>
                         ))}
@@ -106,6 +133,8 @@ export default function HomeInicial({ navigation }: any) {
                                 <Callout tooltip>
                                     <View style={styles.ViewDelegacaia}>
                                         <Text style={styles.TextDelegacia}>{marker.name}</Text>
+                                        <Text style={styles.TextDelegacia}>Aberta</Text>
+                                        <Text style={styles.TextDelegacia}>{marker.telefone}</Text>
                                     </View>
                                 </Callout>
                             </Marker>

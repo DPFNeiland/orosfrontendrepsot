@@ -370,5 +370,258 @@ export const markers = [
         type: 'DECCM',
         telefone: '92 3667 7737'
     },
-]
 
+    // Lista de contatos Delegacias Capital (Especializada)
+    {
+        latitude: -3.0620784,
+        longitude: -60.0844266,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEOPS – Ordem Política e Social',
+        nameabrev: 'DEOPS – Ordem Política e Social',
+        type: 'DEOPS – Ordem Política e Social',
+        telefone: '92 3667 7713'
+    },
+
+    {
+        latitude: -3.0787681,
+        longitude: -60.0496925,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DERFD – Roubos, Furtos e Defraudações',
+        nameabrev: 'DERFD – Roubos, Furtos e Defraudações',
+        type: 'DERFD',
+        telefone: '92 3667 7715'
+    },
+
+    {
+        latitude: -3.0787681,
+        longitude: -60.0496925,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DERFV – Roubos e Furtos de Veículos',
+        nameabrev: 'DERFV – Roubos e Furtos de Veículos',
+        type: 'DERFV',
+        telefone: '92 3667 7719'
+    },
+
+    {
+        latitude: -3.0242271,
+        longitude: -59.9335376,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEAT – Acidente de Trânsito',
+        nameabrev: 'DEAT – Acidente de Trânsito',
+        type: 'DEAT',
+        telefone: '92 3667 7721'
+    },
+
+    {
+        latitude: -3.0412791,
+        longitude: -59.942371,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEHS / ANEXO',
+        nameabrev: 'DEHS / ANEXO',
+        type: 'DEHS',
+        telefone: '92 3667 7723'
+    },
+
+    {
+        latitude: -3.0412791,
+        longitude: -59.942371,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEHS – Delegacia Esp de Homicídios e Sequestro (Perm)',
+        nameabrev: 'DEHS – Delegacia Esp de Homicídios e Sequestro (Perm)',
+        type: 'DEHS',
+        telefone: '92 3667 7726'
+    },
+
+    {
+        latitude: -3.0412791,
+        longitude: -59.942371,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEHS – Delegacia Esp de Homicídios e Sequestro',
+        nameabrev: 'DEHS – Delegacia Esp de Homicídios e Sequestro',
+        type: 'DEHS',
+        telefone: '92 3667 7725'
+    },
+
+    {
+        latitude: -3.0412791,
+        longitude: -59.942371,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECP – Capturas e Polinter',
+        nameabrev: 'DECP – Capturas e Polinter',
+        type: 'DECP',
+        telefone: '92 3667 7725'
+    },
+
+    {
+        latitude: -3.1127153,
+        longitude: -60.0346659,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECP – Capturas e Polinter',
+        nameabrev: 'DECP – Capturas e Polinter',
+        type: 'DECP',
+        telefone: '92 3667 7725'
+    },
+
+    {
+        latitude: -3.1475517,
+        longitude: -60.0055861,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECON - Proteção ao Consumidor',
+        nameabrev: 'DECON - Proteção ao Consumidor',
+        type: 'DECON',
+        telefone: '92 3667 7729'
+    },
+
+    {
+        latitude: -3.0529241,
+        longitude: -60.0399879,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECCFPE – Crimes contra a Faz Púb Estadual',
+        nameabrev: 'DECCFPE – Crimes contra a Faz Púb Estadual',
+        type: 'DECCFPE',
+        telefone: '92 3667 7731'
+    },
+
+    {
+        latitude: -3.0880368,
+        longitude: -60.0190509,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'PLV - Plantão dos Vulneráveis',
+        nameabrev: 'PLV - Plantão dos Vulneráveis',
+        type: 'PLV',
+        telefone: '92 3667 7733'
+    },
+
+    {
+        latitude: -3.0906084,
+        longitude: -60.0008356,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEPCA - Proteção à criança e ao Adolescente - Plantão',
+        nameabrev: 'DEPCA - Proteção à criança e ao Adolescente - Plantão',
+        type: 'DEPCA',
+        telefone: '92 3667 7739'
+    },
+
+    {
+        latitude: -3.0906084,
+        longitude: -60.0008356,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEPCA - Proteção à criança e ao Adolescente - Expediente',
+        nameabrev: 'DEPCA - Proteção à criança e ao Adolescente - Expediente',
+        type: 'DEPCA',
+        telefone: '92 3667 7740'
+    },
+
+    {
+        latitude: -3.0905546,
+        longitude: -60.0237312,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'Dema – Crimes contra o Meio Ambiente e Urbanismo',
+        nameabrev: 'Dema – Crimes contra o Meio Ambiente e Urbanismo',
+        type: 'Dema',
+        telefone: '92 3667 7741'
+    },
+
+    {
+        latitude: -3.0809468,
+        longitude: -60.0106219,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECCI – Crimes contra o Idoso',
+        nameabrev: 'DECCI – Crimes contra o Idoso',
+        type: 'DECCI',
+        telefone: '92 3667 7743'
+    },
+
+    {
+        latitude: -3.0745122,
+        longitude: -60.0294607,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEAAI - Apuração de Atos Infracionais - Plantão',
+        nameabrev: 'DEAAI - Apuração de Atos Infracionais - Plantão',
+        type: 'DEAAI',
+        telefone: '92 3667 7745'
+    },
+
+    {
+        latitude: -3.0745122,
+        longitude: -60.0294607,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DEAAI - Apuração de Atos Infracionais - Expediente',
+        nameabrev: 'DEAAI - Apuração de Atos Infracionais - Expediente',
+        type: 'DEAAI',
+        telefone: '92 3667 7746'
+    },
+
+    {
+        latitude: -3.0322748,
+        longitude: -60.0497299,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECCT – Crimes contra o Turista',
+        nameabrev: 'DECCT – Crimes contra o Turista',
+        type: 'DECCT',
+        telefone: '92 3667 7747'
+    },
+
+    {
+        latitude: -3.0860572,
+        longitude: -60.106224,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DERCC - Repressão a Crimes Cibernéticos',
+        nameabrev: 'DERCC - Repressão a Crimes Cibernéticos',
+        type: 'DERCC',
+        telefone: '92 3667 7749'
+    },
+
+    {
+        latitude: -3.0620784,
+        longitude: -60.0844266,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DECCOR – Combate à Corrupção',
+        nameabrev: 'DECCOR – Combate à Corrupção',
+        type: 'DECCOR',
+        telefone: '92 3667 7751'
+    },
+
+    {
+        latitude: -3.1034342,
+        longitude: -60.0633329,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DRCO - Repressão ao Crime Organizado',
+        nameabrev: 'DRCO - Repressão ao Crime Organizado',
+        type: 'DRCO',
+        telefone: '92 3667 7753'
+    },
+
+    {
+        latitude: -3.0860782,
+        longitude: -60.0300825,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+        name: 'DENARC - Prevenção e Repressão a Entorpecente',
+        nameabrev: 'DENARC - Prevenção e Repressão a Entorpecente',
+        type: 'DRCO',
+        telefone: '92 3667 7755'
+    },
+]
