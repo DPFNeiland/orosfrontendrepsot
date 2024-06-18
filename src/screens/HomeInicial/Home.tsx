@@ -53,6 +53,10 @@ export default function HomeInicial({ navigation }: any) {
     const onMarkerSelecterd = (marker: any) => {
         Alert.alert(marker.name)
     }
+
+
+    const now = new Date();
+    const hour = now.getHours()
     return (
         <SafeAreaView style={styles.geral}>
 
@@ -61,7 +65,7 @@ export default function HomeInicial({ navigation }: any) {
             </TouchableOpacity>
             <View style={styles.map}>
 
-                {location && (
+                {location ? (
                     <MapView
                         ref={mapRef}
                         style={styles.map}
@@ -97,13 +101,13 @@ export default function HomeInicial({ navigation }: any) {
                                 <IconDel height={40} />
                                 <Callout tooltip>
                                     <TouchableOpacity style={styles.ViewDelegacaia} onPress={() => {
-                                                const telefone = marker.telefone
-                                                const teltelefone = 'tel:' + telefone;
-                                                Linking.openURL(teltelefone);
-                                            }}>
+                                        const telefone = marker.telefone
+                                        const teltelefone = 'tel:' + telefone;
+                                        Linking.openURL(teltelefone);
+                                    }}>
                                         <Text style={styles.TextDelegacia}>{marker.name}</Text>
-                                        <Text style={styles.TextDelegacia}>Aberta</Text>
 
+                                        {marker.time == '24hours' ? <Text style={styles.TextDelegacia}>Aberta - 24 horas</Text> : marker.time != '24hours' && hour >= 8 && hour < 17 ? <Text style={styles.TextDelegacia}>Aberta - 8:00 até às 17:00</Text> : <Text style={styles.TextDelegacia}>Fechada - 8:00 até às 17:00</Text>}
 
                                         <View style={{ alignItems: 'center', flexDirection: 'row' }}>
 
@@ -140,7 +144,11 @@ export default function HomeInicial({ navigation }: any) {
                             </Marker>
                         ))}
                     </MapView>
-                )}
+                ) :
+                    <View style={styles.carregando}>
+                        <Text>Carregando...</Text>
+                    </View>
+                }
 
                 <View style={styles.botoesMenu}>
                     <View style={styles.BottomView}>

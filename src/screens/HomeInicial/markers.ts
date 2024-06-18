@@ -12,6 +12,7 @@ export const markers = [
         name: '1º DIP - Distrito Integrado de Polícia',
         nameabrev: '1º DIP',
         type: 'DIP',
+        time: '24hours',
         telefone: '92 3667 7601'
     },
 
@@ -65,6 +66,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '6º DIP - Distrito Integrado de Polícia',
         nameabrev: '6º DIP',
+        time: '24hours',
         type: 'DIP',
         telefone: '92 3667 7606'
     },
@@ -153,6 +155,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '14º DIP - Distrito Integrado de Polícia',
         nameabrev: '14º DIP',
+        time: '24hours',
         type: 'DIP',
         telefone: '92 3667 7614'
     },
@@ -209,6 +212,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '19º DIP - Distrito Integrado de Polícia',
         nameabrev: '19º DIP',
+        time: '24hours',
         type: 'DIP',
         telefone: '92 3667 7619'
     },
@@ -345,6 +349,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: 'DECCM – Crimes contra a Mulher – PQ10',
         nameabrev: 'DECCM',
+        time: '24hours',
         type: 'DECCM',
         telefone: '92 3667 7734'
     },
@@ -511,6 +516,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: 'DEPCA - Proteção à criança e ao Adolescente - Plantão',
         nameabrev: 'DEPCA - Proteção à criança e ao Adolescente - Plantão',
+        time: '24hours',
         type: 'DEPCA',
         telefone: '92 3667 7739'
     },
@@ -555,6 +561,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: 'DEAAI - Apuração de Atos Infracionais - Plantão',
         nameabrev: 'DEAAI - Apuração de Atos Infracionais - Plantão',
+        time: '24hours',
         type: 'DEAAI',
         telefone: '92 3667 7745'
     },
@@ -577,6 +584,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: 'DECCT – Crimes contra o Turista',
         nameabrev: 'DECCT – Crimes contra o Turista',
+        time: '24hours',
         type: 'DECCT',
         telefone: '92 3667 7747'
     },

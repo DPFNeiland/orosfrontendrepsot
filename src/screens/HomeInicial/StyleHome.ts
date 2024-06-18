@@ -11,12 +11,21 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: height,
   },
+
+  carregando: {
+    flex: 1,
+    width: '100%',
+    height: height,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
   botoesMenu: {
     alignItems: 'center',
     justifyContent: 'space-around',
     flexDirection: 'row',
     height: height * 0.14625,
-    width: width * 1,
+    width: width,
     backgroundColor: '#EFF3FF',
     borderColor: '#B1D5FF',
     borderWidth: 1,
@@ -33,8 +42,8 @@ export const styles = StyleSheet.create({
   },
   ViewDelegacaia: {
     padding: 10,
-    backgroundColor: '#D9D9D9', 
-    borderRadius: 20, 
+    backgroundColor: '#D9D9D9',
+    borderRadius: 20,
     shadowColor: '#000',
     alignItems: 'center',
     shadowOffset: { width: 0, height: 2 },
@@ -47,7 +56,7 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 'bold',
     color: 'black',
-    textAlign: 'center', 
+    textAlign: 'center',
   },
   BottomMicrofone: {
     height: height * 0.125,
