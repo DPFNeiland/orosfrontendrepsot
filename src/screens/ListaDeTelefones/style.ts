@@ -13,14 +13,8 @@ export const styles = StyleSheet.create({
     },
 
     TextRegisto: {
-        marginTop: '7.5%',
         fontFamily: 'GothamMedium',
         fontSize: tamanhodotexto,
-    },
-
-    TextAlinhado: {
-        flexDirection: 'row',
-        gap: 5
     },
 
     Botao: {

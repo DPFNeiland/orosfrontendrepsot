@@ -538,7 +538,7 @@ export const markers = [
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
         name: 'Dema – Crimes contra o Meio Ambiente e Urbanismo',
-        nameabrev: 'Dema – Crimes contra o Meio Ambiente e Urbanismo',
+        nameabrev: 'Dema',
         type: 'Dema',
         telefone: '92 3667 7741'
     },
@@ -628,7 +628,7 @@ export const markers = [
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
         name: 'DENARC - Prevenção e Repressão a Entorpecente',
-        nameabrev: 'DENARC - Prevenção e Repressão a Entorpecente',
+        nameabrev: 'DENARC',
         type: 'DRCO',
         telefone: '92 3667 7755'
     },

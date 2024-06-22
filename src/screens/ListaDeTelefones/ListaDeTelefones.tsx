@@ -5,6 +5,7 @@ import { styles } from "./style";
 import HistoricoChamada from "../../components/Home/HistoricoEmergencia";
 import TelefoneDelegacia from "../../components/Home/TelefineDelegacia";
 import { BOtaoTelefones } from "../../components/NumeroDeEmergencia/TelefoneTouchableOpacity";
+import GoBack from "../../../assets/BotoesDelegacias/GoBack.svg"
 
 export default function ListaDeTelefones({ navigation }: any) {
 
@@ -13,11 +14,18 @@ export default function ListaDeTelefones({ navigation }: any) {
 
         <SafeAreaView style={styles.areaview}>
 
+
+
             <ScrollView
                 showsVerticalScrollIndicator={false}
             >
-                <Text style={styles.TextRegisto}>Mais números de emergência</Text>
 
+                <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+                    <TouchableOpacity onPress={() => navigation.goBack()}>
+                        <GoBack />
+                    </TouchableOpacity>
+                    <Text style={styles.TextRegisto}>Mais números de emergência</Text>
+                </View>
 
                 <BOtaoTelefones
                     numero="181"
@@ -125,7 +133,7 @@ export default function ListaDeTelefones({ navigation }: any) {
 
                     color="#AB9B7B"
                 />
-                
+
             </ScrollView>
         </SafeAreaView>
     );

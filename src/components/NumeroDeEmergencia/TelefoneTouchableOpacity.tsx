@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View, Text, Linking, TouchableOpacity } from "react-native"
+import { View, Text, Linking, TouchableOpacity, ScrollView } from "react-native"
 import { styles } from "./styles"
 import TelefoneDelegacia from "../Home/TelefineDelegacia"
 import { Arrow } from "../../../assets/ListaTelefones/Arrow"
@@ -73,10 +73,9 @@ export function BOtaoTelefones({ numero, subdescricao, descricao, color }: BOtao
                                 }
                             </TouchableOpacity>
                             
-                            <View style={{ width: '85%' }}>
-                                <Text>Descrição {'\n'}</Text>
+                            <ScrollView style={{ width: '85%' }}>
                                 <Text>{descricao}</Text>
-                            </View>
+                            </ScrollView>
                         </View>
 
 

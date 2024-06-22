@@ -146,7 +146,7 @@ export default function HomeInicial({ navigation }: any) {
                     </MapView>
                 ) :
                     <View style={styles.carregando}>
-                        <Text>Carregando...</Text>
+                        <Text style={styles.textcarregando}>Carregando...</Text>
                     </View>
                 }
 

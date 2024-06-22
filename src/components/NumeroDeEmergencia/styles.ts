@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         gap: 5,
+        marginTop: '3%'
     },
 
     Botao: {
@@ -31,7 +32,9 @@ export const styles = StyleSheet.create({
         borderColor: '#C7D1ED',
         borderWidth: 2,
         borderRadius: 25,
-        marginTop: '5%',
+        marginTop: '3%',
+        marginBottom: '2%',
+        marginHorizontal: '5%',
         paddingHorizontal: 15
     },
 
@@ -40,13 +43,15 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         width: width * 0.9,
-        height: 180,
         backgroundColor: 'white',
+        marginHorizontal: '5%',
         elevation: 1,
         borderColor: '#C7D1ED',
         borderWidth: 2,
         borderRadius: 25,
         marginTop: '2%',
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
+        flex: 1,
+        padding: '5%'
     }
 })

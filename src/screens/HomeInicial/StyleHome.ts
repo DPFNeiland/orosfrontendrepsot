@@ -17,7 +17,12 @@ export const styles = StyleSheet.create({
     width: '100%',
     height: height,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: '#003470'
+  },
+  
+  textcarregando :{
+    color: 'white'
   },
 
   botoesMenu: {
@@ -31,6 +36,8 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
+    position: 'absolute',
+    marginTop: '182%'
   },
   BottomView: {
     alignItems: 'center',
