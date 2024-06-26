@@ -7,6 +7,7 @@ import Perfil from '../screens/perfil/perfil'
 import Historico from '../screens/HistoricoBO/BOs'
 import BoDetalhes from '../screens/BoDetalhes/BoDetalhes'
 import ListaDeTelefones from '../screens/ListaDeTelefones/ListaDeTelefones'
+import Delegacias from '../screens/Delegacias'
 
 const AppRoutes = createStackNavigator()
 
@@ -53,6 +54,11 @@ export default function () {
             <AppRoutes.Screen
                 name="ListaDeTelefones"
                 component={ListaDeTelefones}
+            />
+
+            <AppRoutes.Screen
+                name="Delegacias"
+                component={Delegacias}
             />
         </AppRoutes.Navigator>
     )

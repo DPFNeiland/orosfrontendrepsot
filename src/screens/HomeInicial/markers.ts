@@ -24,6 +24,7 @@ export const markers = [
         name: '2º DIP - Distrito Integrado de Polícia',
         nameabrev: '2º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7602'
     },
 
@@ -35,6 +36,7 @@ export const markers = [
         name: '3º DIP - Distrito Integrado de Polícia',
         nameabrev: '3º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7603'
     },
 
@@ -46,6 +48,7 @@ export const markers = [
         name: '4º DIP - Distrito Integrado de Polícia',
         nameabrev: '4º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7604'
     },
 
@@ -57,6 +60,7 @@ export const markers = [
         name: '5º DIP - Distrito Integrado de Polícia',
         nameabrev: '5º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7605'
     },
     {
@@ -79,6 +83,7 @@ export const markers = [
         name: '7º DIP - Distrito Integrado de Polícia',
         nameabrev: '7º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7607'
     },
 
@@ -90,6 +95,7 @@ export const markers = [
         name: '8º DIP - Distrito Integrado de Polícia',
         nameabrev: '8º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7608'
     },
 
@@ -101,6 +107,7 @@ export const markers = [
         name: '9º DIP - Distrito Integrado de Polícia',
         nameabrev: '9º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7609'
     },
 
@@ -112,6 +119,7 @@ export const markers = [
         name: '10º DIP - Distrito Integrado de Polícia',
         nameabrev: '10º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7610'
     },
 
@@ -123,6 +131,7 @@ export const markers = [
         name: '11º DIP - Distrito Integrado de Polícia',
         nameabrev: '11º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7611'
     },
 
@@ -134,6 +143,7 @@ export const markers = [
         name: '12º DIP - Distrito Integrado de Polícia',
         nameabrev: '12º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7612'
     },
 
@@ -145,6 +155,7 @@ export const markers = [
         name: '13º DIP - Distrito Integrado de Polícia',
         nameabrev: '13º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7613'
     },
 
@@ -169,6 +180,7 @@ export const markers = [
         name: '15º DIP - Distrito Integrado de Polícia',
         nameabrev: '15º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7615'
     },
 
@@ -179,6 +191,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '16º DIP - Distrito Integrado de Polícia',
         nameabrev: '16º DIP',
+        time: 'not24hours',
         type: 'DIP',
         telefone: '92 3667 7616'
     },
@@ -190,6 +203,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '17º DIP - Distrito Integrado de Polícia',
         nameabrev: '17º DIP',
+        time: 'not24hours',
         type: 'DIP',
         telefone: '92 3667 7617'
     },
@@ -202,6 +216,7 @@ export const markers = [
         name: '18º DIP - Distrito Integrado de Polícia',
         nameabrev: '18º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7618'
     },
 
@@ -224,6 +239,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '20º DIP - Distrito Integrado de Polícia',
         nameabrev: '20º DIP',
+        time: 'not24hours',
         type: 'DIP',
         telefone: '92 3667 7620'
     },
@@ -235,6 +251,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '21º DIP - Distrito Integrado de Polícia',
         nameabrev: '21º DIP',
+        time: 'not24hours',
         type: 'DIP',
         telefone: '92 3667 7621'
     },
@@ -246,6 +263,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '22º DIP - Distrito Integrado de Polícia',
         nameabrev: '22º DIP',
+        time: 'not24hours',
         type: 'DIP',
         telefone: '92 3667 7622'
     },
@@ -257,6 +275,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '23º DIP - Distrito Integrado de Polícia',
         nameabrev: '23º DIP',
+        time: 'not24hours',
         type: 'DIP',
         telefone: '92 3667 7623'
     },
@@ -269,6 +288,7 @@ export const markers = [
         name: '24º DIP - Distrito Integrado de Polícia',
         nameabrev: '24º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7624'
     },
 
@@ -279,6 +299,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '25º DIP - Distrito Integrado de Polícia',
         nameabrev: '25º DIP',
+        time: 'not24hours',
         type: 'DIP',
         telefone: '92 3667 7625'
     },
@@ -291,6 +312,7 @@ export const markers = [
         name: '26º DIP - Distrito Integrado de Polícia',
         nameabrev: '26º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7626'
     },
 
@@ -302,6 +324,7 @@ export const markers = [
         name: '28º DIP - Distrito Integrado de Polícia',
         nameabrev: '28º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7628'
     },
 
@@ -313,6 +336,7 @@ export const markers = [
         name: '29º DIP - Distrito Integrado de Polícia',
         nameabrev: '29º DIP',
         type: 'DIP',
+        time: 'not24hours',
         telefone: '92 3667 7629'
     },
 
@@ -326,6 +350,7 @@ export const markers = [
         name: '27º CICOM',
         nameabrev: '27º CICOM',
         type: 'CICOM',
+        time: 'not24hours',
         telefone: '92 3667 7627'
     },
 
@@ -337,6 +362,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: '30º CICOM',
         nameabrev: '30º CICOM',
+        time: 'not24hours',
         type: 'CICOM',
         telefone: '92 3667 7627'
     },
@@ -362,6 +388,7 @@ export const markers = [
         name: 'DECCM – Crimes contra a Mulher– Norte/Leste',
         nameabrev: 'DECCM - Norte/Leste',
         type: 'DECCM',
+        time: 'not24hours',
         telefone: '92 3667 7735'
     },
 
@@ -373,6 +400,7 @@ export const markers = [
         name: 'DECCM - Crimes contra a Mulher – Sul/Oeste',
         nameabrev: 'DECCM - Sul/Oeste',
         type: 'DECCM',
+        time: 'not24hours',
         telefone: '92 3667 7737'
     },
 
@@ -385,6 +413,7 @@ export const markers = [
         name: 'DEOPS – Ordem Política e Social',
         nameabrev: 'DEOPS – Ordem Política e Social',
         type: 'DEOPS – Ordem Política e Social',
+        time: 'not24hours',
         telefone: '92 3667 7713'
     },
 
@@ -396,6 +425,7 @@ export const markers = [
         name: 'DERFD – Roubos, Furtos e Defraudações',
         nameabrev: 'DERFD – Roubos, Furtos e Defraudações',
         type: 'DERFD',
+        time: 'not24hours',
         telefone: '92 3667 7715'
     },
 
@@ -407,6 +437,7 @@ export const markers = [
         name: 'DERFV – Roubos e Furtos de Veículos',
         nameabrev: 'DERFV – Roubos e Furtos de Veículos',
         type: 'DERFV',
+        time: 'not24hours',
         telefone: '92 3667 7719'
     },
 
@@ -418,6 +449,7 @@ export const markers = [
         name: 'DEAT – Acidente de Trânsito',
         nameabrev: 'DEAT – Acidente de Trânsito',
         type: 'DEAT',
+        time: 'not24hours',
         telefone: '92 3667 7721'
     },
 
@@ -429,6 +461,7 @@ export const markers = [
         name: 'DEHS / ANEXO',
         nameabrev: 'DEHS / ANEXO',
         type: 'DEHS',
+        time: 'not24hours',
         telefone: '92 3667 7723'
     },
 
@@ -440,6 +473,7 @@ export const markers = [
         name: 'DEHS – Delegacia Esp de Homicídios e Sequestro (Perm)',
         nameabrev: 'DEHS – Delegacia Esp de Homicídios e Sequestro (Perm)',
         type: 'DEHS',
+        time: 'not24hours',
         telefone: '92 3667 7726'
     },
 
@@ -451,6 +485,7 @@ export const markers = [
         name: 'DEHS – Delegacia Esp de Homicídios e Sequestro',
         nameabrev: 'DEHS – Delegacia Esp de Homicídios e Sequestro',
         type: 'DEHS',
+        time: 'not24hours',
         telefone: '92 3667 7725'
     },
 
@@ -462,6 +497,7 @@ export const markers = [
         name: 'DECP – Capturas e Polinter',
         nameabrev: 'DECP – Capturas e Polinter',
         type: 'DECP',
+        time: 'not24hours',
         telefone: '92 3667 7725'
     },
 
@@ -473,6 +509,7 @@ export const markers = [
         name: 'DECP – Capturas e Polinter',
         nameabrev: 'DECP – Capturas e Polinter',
         type: 'DECP',
+        time: 'not24hours',
         telefone: '92 3667 7725'
     },
 
@@ -484,6 +521,7 @@ export const markers = [
         name: 'DECON - Proteção ao Consumidor',
         nameabrev: 'DECON - Proteção ao Consumidor',
         type: 'DECON',
+        time: 'not24hours',
         telefone: '92 3667 7729'
     },
 
@@ -495,6 +533,7 @@ export const markers = [
         name: 'DECCFPE – Crimes contra a Faz Púb Estadual',
         nameabrev: 'DECCFPE – Crimes contra a Faz Púb Estadual',
         type: 'DECCFPE',
+        time: 'not24hours',
         telefone: '92 3667 7731'
     },
 
@@ -506,6 +545,7 @@ export const markers = [
         name: 'PLV - Plantão dos Vulneráveis',
         nameabrev: 'PLV - Plantão dos Vulneráveis',
         type: 'PLV',
+        time: 'not24hours',
         telefone: '92 3667 7733'
     },
 
@@ -529,6 +569,7 @@ export const markers = [
         name: 'DEPCA - Proteção à criança e ao Adolescente - Expediente',
         nameabrev: 'DEPCA - Proteção à criança e ao Adolescente - Expediente',
         type: 'DEPCA',
+        time: 'not24hours',
         telefone: '92 3667 7740'
     },
 
@@ -539,6 +580,7 @@ export const markers = [
         longitudeDelta: 0.005,
         name: 'Dema – Crimes contra o Meio Ambiente e Urbanismo',
         nameabrev: 'Dema',
+        time: 'not24hours',
         type: 'Dema',
         telefone: '92 3667 7741'
     },
@@ -551,6 +593,7 @@ export const markers = [
         name: 'DECCI – Crimes contra o Idoso',
         nameabrev: 'DECCI – Crimes contra o Idoso',
         type: 'DECCI',
+        time: 'not24hours',
         telefone: '92 3667 7743'
     },
 
@@ -574,6 +617,7 @@ export const markers = [
         name: 'DEAAI - Apuração de Atos Infracionais - Expediente',
         nameabrev: 'DEAAI - Apuração de Atos Infracionais - Expediente',
         type: 'DEAAI',
+        time: 'not24hours',
         telefone: '92 3667 7746'
     },
 
@@ -591,12 +635,13 @@ export const markers = [
 
     {
         latitude: -3.0860572,
-        longitude: -60.106224,
+        longitude: -60.0300063,
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
         name: 'DERCC - Repressão a Crimes Cibernéticos',
         nameabrev: 'DERCC - Repressão a Crimes Cibernéticos',
         type: 'DERCC',
+        time: 'not24hours',
         telefone: '92 3667 7749'
     },
 
@@ -608,6 +653,7 @@ export const markers = [
         name: 'DECCOR – Combate à Corrupção',
         nameabrev: 'DECCOR – Combate à Corrupção',
         type: 'DECCOR',
+        time: 'not24hours',
         telefone: '92 3667 7751'
     },
 
@@ -619,6 +665,7 @@ export const markers = [
         name: 'DRCO - Repressão ao Crime Organizado',
         nameabrev: 'DRCO - Repressão ao Crime Organizado',
         type: 'DRCO',
+        time: 'not24hours',
         telefone: '92 3667 7753'
     },
 
@@ -630,6 +677,7 @@ export const markers = [
         name: 'DENARC - Prevenção e Repressão a Entorpecente',
         nameabrev: 'DENARC',
         type: 'DRCO',
+        time: 'not24hours',
         telefone: '92 3667 7755'
     },
 ]
